@@ -42,4 +42,21 @@ class UserValidationTest {
         result = userValidator.emailIsInValid.validate("see@");
         Assertions.assertFalse(result);
     }
+
+
+    @Test
+    public void mobileNumberIsValid() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = false;
+        result = userValidator.mobileNumberIsInValid.validate("91 7745853115");
+        Assertions.assertFalse(result);
+    }
+
+    @Test
+    public void mobileNumberInValid() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = true;
+        result = userValidator.mobileNumberIsValid.validate("9503076240666");
+        Assertions.assertTrue(result);
+    }
 }
