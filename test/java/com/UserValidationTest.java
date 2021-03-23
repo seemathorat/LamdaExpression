@@ -59,4 +59,19 @@ class UserValidationTest {
         result = userValidator.mobileNumberIsValid.validate("9503076240666");
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void passwordIsValid() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = true;
+        result = userValidator.passwordIsValid.validate("Seemagade");
+        Assertions.assertTrue(result);
+    }
+    @Test
+    public void passwordIs_In_Valid_Result() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = false;
+        result = userValidator.passwordIsInValid.validate("su");
+        Assertions.assertFalse(result);
+    }
 }
