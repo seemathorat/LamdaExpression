@@ -27,4 +27,19 @@ class UserValidationTest {
         result = userValidator.lastNameIsInValid.validate("seema");
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void emailIsValid() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = true;
+        result = userValidator.emailIsValid.validate("Seema@97gmail.com");
+        Assertions.assertTrue(result);
+    }
+    @Test
+    public void emailIsInValid() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = false;
+        result = userValidator.emailIsInValid.validate("see@");
+        Assertions.assertFalse(result);
+    }
 }
