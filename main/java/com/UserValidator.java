@@ -9,4 +9,7 @@ class UserValidator {
 
     UserRegistrationSystem firstNameIsValid = (s) -> (Pattern.compile(NAME_PATTERN).matcher(s).matches());
     UserRegistrationSystem firstNameIsInValid = (s) -> (Pattern.compile(NAME_PATTERN).matcher(s).matches());
+
+    UserRegistrationSystem lastNameIsValid = (s) -> (Pattern.compile(NAME_PATTERN).matcher(s).matches());
+    UserRegistrationSystem lastNameIsInValid = (s) -> (Pattern.compile(NAME_PATTERN).matcher(s).matches());
 }

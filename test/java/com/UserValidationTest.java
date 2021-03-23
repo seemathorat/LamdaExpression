@@ -11,4 +11,20 @@ class UserValidationTest {
         result = userValidator.firstNameIsValid.validate("Seema");
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void lastNameIsValid() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = true;
+        result = userValidator.lastNameIsValid.validate("Thorat");
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void lastNameIsInValid() {
+        UserValidator userValidator = new UserValidator();
+        boolean result = false;
+        result = userValidator.lastNameIsInValid.validate("seema");
+        Assertions.assertFalse(result);
+    }
 }
